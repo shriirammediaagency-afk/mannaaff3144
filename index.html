@@ -47,7 +47,7 @@
     <!-- Circular Profile / Logo Image -->
     <div class="relative w-24 h-24 mb-5 rounded-full overflow-hidden shadow-inner ring-2 ring-gray-100 flex-shrink-0 bg-gray-50 flex items-center justify-center">
       <img 
-        src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=400&h=400&q=80" 
+        src="Munaaf.jpeg" 
         alt="Trade with Munaaf Logo" 
         class="w-full h-full object-cover object-center"
         onerror="this.onerror=null; this.src='https://placehold.co/200x200/10b981/ffffff?text=TWM';"
@@ -116,7 +116,158 @@
       Join our Telegram Channel
     </a>
 
+    <!-- Footer Links inside Card -->
+    <footer class="mt-8 pt-5 border-t border-gray-100 w-full flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs text-gray-500">
+      <button type="button" onclick="openModal('terms-modal')" class="hover:text-gray-900 transition-colors focus:outline-none">Terms &amp; Conditions</button>
+      <span class="text-gray-300">•</span>
+      <button type="button" onclick="openModal('privacy-modal')" class="hover:text-gray-900 transition-colors focus:outline-none">Privacy Policy</button>
+      <span class="text-gray-300">•</span>
+      <button type="button" onclick="openModal('disclaimer-modal')" class="hover:text-gray-900 transition-colors focus:outline-none">Disclaimer</button>
+      <span class="text-gray-300">•</span>
+      <button type="button" onclick="openModal('contact-modal')" class="hover:text-gray-900 transition-colors focus:outline-none">Contact Us</button>
+    </footer>
+
+    <p class="text-[11px] text-gray-400 mt-3">&copy; <span id="year"></span> Trade with Munaaf. All rights reserved.</p>
+
   </main>
+
+  <!-- Modal Backdrop & Containers -->
+  <div id="modal-container" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-200">
+
+    <!-- Terms & Conditions Modal -->
+    <div id="terms-modal" class="modal-card hidden w-full max-w-lg bg-white rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden transform transition-all duration-200">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+        <h3 class="text-lg font-bold text-gray-900">Terms &amp; Conditions</h3>
+        <button type="button" onclick="closeModal()" class="text-gray-400 hover:text-gray-700 rounded-lg p-1.5 text-xl font-bold leading-none focus:outline-none">&times;</button>
+      </div>
+      <div class="px-6 py-5 overflow-y-auto text-sm text-gray-600 space-y-3 leading-relaxed text-left">
+        <p>Welcome to <strong>Trade with Munaaf</strong>. By accessing our Telegram channel, website, or community content, you agree to comply with and be bound by the following terms.</p>
+        <h4 class="font-semibold text-gray-800">1. Educational Purposes Only</h4>
+        <p>All stock updates, charts, tutorials, and discussions are solely intended for knowledge and educational awareness. None of the materials constitute investment advice or a direct solicitation to trade.</p>
+        <h4 class="font-semibold text-gray-800">2. No Guarantee of Profits</h4>
+        <p>Trading in equity, derivatives, commodities, or currencies carries substantial financial risk. Past results or hypothetical case studies do not represent or guarantee future earnings.</p>
+        <h4 class="font-semibold text-gray-800">3. User Discretion</h4>
+        <p>You assume 100% individual responsibility for any financial decisions or orders placed in your brokerage account. Always consult a certified financial advisor before committing capital.</p>
+      </div>
+      <div class="px-6 py-3 border-t border-gray-100 bg-gray-50 flex justify-end">
+        <button type="button" onclick="closeModal()" class="px-4 py-2 bg-gray-900 text-white text-xs font-semibold rounded-lg hover:bg-gray-800 transition">Close</button>
+      </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal-card hidden w-full max-w-lg bg-white rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden transform transition-all duration-200">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+        <h3 class="text-lg font-bold text-gray-900">Privacy Policy</h3>
+        <button type="button" onclick="closeModal()" class="text-gray-400 hover:text-gray-700 rounded-lg p-1.5 text-xl font-bold leading-none focus:outline-none">&times;</button>
+      </div>
+      <div class="px-6 py-5 overflow-y-auto text-sm text-gray-600 space-y-3 leading-relaxed text-left">
+        <p>Your privacy is important to us. This policy outlines how information is managed when using this landing page.</p>
+        <h4 class="font-semibold text-gray-800">1. Data Collection</h4>
+        <p>This landing page does not store, harvest, or sell any personal identifying information, cookies, or payment data.</p>
+        <h4 class="font-semibold text-gray-800">2. External Links (Telegram)</h4>
+        <p>When clicking "Join our Telegram Channel", you will be redirected to Telegram. Telegram operates under its own privacy policies and terms of service.</p>
+        <h4 class="font-semibold text-gray-800">3. Policy Revisions</h4>
+        <p>We may update this policy periodically to reflect operational, legal, or regulatory updates.</p>
+      </div>
+      <div class="px-6 py-3 border-t border-gray-100 bg-gray-50 flex justify-end">
+        <button type="button" onclick="closeModal()" class="px-4 py-2 bg-gray-900 text-white text-xs font-semibold rounded-lg hover:bg-gray-800 transition">Close</button>
+      </div>
+    </div>
+
+    <!-- Disclaimer Modal -->
+    <div id="disclaimer-modal" class="modal-card hidden w-full max-w-lg bg-white rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden transform transition-all duration-200">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+        <h3 class="text-lg font-bold text-gray-900">Financial &amp; SEBI Disclaimer</h3>
+        <button type="button" onclick="closeModal()" class="text-gray-400 hover:text-gray-700 rounded-lg p-1.5 text-xl font-bold leading-none focus:outline-none">&times;</button>
+      </div>
+      <div class="px-6 py-5 overflow-y-auto text-sm text-gray-600 space-y-3 leading-relaxed text-left">
+        <div class="p-3 bg-amber-50 border border-amber-200 rounded-lg text-amber-900 text-xs">
+          <strong>Notice:</strong> Investment in securities markets are subject to market risks. Read all scheme and stock related documents carefully before investing.
+        </div>
+        <p><strong>Trade with Munaaf</strong> and its administrators are not SEBI registered research analysts or investment advisors unless explicitly specified.</p>
+        <p>All stock charts, technical setups, levels, and observations shared inside the channel or website are for <strong>educational and study purposes only</strong>. We will not be liable for any profit or loss incurred from real money trades.</p>
+        <p>Please exercise prudent risk management, maintain stop-losses, and consult your certified financial planner prior to taking financial positions.</p>
+      </div>
+      <div class="px-6 py-3 border-t border-gray-100 bg-gray-50 flex justify-end">
+        <button type="button" onclick="closeModal()" class="px-4 py-2 bg-gray-900 text-white text-xs font-semibold rounded-lg hover:bg-gray-800 transition">Close</button>
+      </div>
+    </div>
+
+    <!-- Contact Us Modal -->
+    <div id="contact-modal" class="modal-card hidden w-full max-w-lg bg-white rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden transform transition-all duration-200">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+        <h3 class="text-lg font-bold text-gray-900">Contact Us</h3>
+        <button type="button" onclick="closeModal()" class="text-gray-400 hover:text-gray-700 rounded-lg p-1.5 text-xl font-bold leading-none focus:outline-none">&times;</button>
+      </div>
+      <div class="px-6 py-5 overflow-y-auto text-sm text-gray-600 space-y-4 text-left">
+        <p>Have questions or inquiries regarding our community? Reach out to us through our official touchpoints below:</p>
+        <div class="flex flex-col gap-3">
+          <div class="p-3 bg-gray-50 border border-gray-200 rounded-xl flex items-center gap-3">
+            <span class="text-xl">✈️</span>
+            <div>
+              <div class="font-semibold text-gray-800 text-xs uppercase tracking-wide">Telegram Support</div>
+              <a href="https://t.me/+mlmCXMi5hpI5OTc1" target="_blank" rel="noopener noreferrer" class="text-emerald-600 font-medium hover:underline text-sm">Join Telegram Community &amp; Contact Admin</a>
+            </div>
+          </div>
+          <div class="p-3 bg-gray-50 border border-gray-200 rounded-xl flex items-center gap-3">
+            <span class="text-xl">✉️</span>
+            <div>
+              <div class="font-semibold text-gray-800 text-xs uppercase tracking-wide">Email Support</div>
+              <a href="mailto:support@tradewithmunaaf.com" class="text-gray-700 hover:text-gray-900 text-sm font-medium">support@tradewithmunaaf.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="px-6 py-3 border-t border-gray-100 bg-gray-50 flex justify-end">
+        <button type="button" onclick="closeModal()" class="px-4 py-2 bg-gray-900 text-white text-xs font-semibold rounded-lg hover:bg-gray-800 transition">Close</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Set dynamic copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Modal Controller
+    const modalContainer = document.getElementById('modal-container');
+    let activeModalId = null;
+
+    function openModal(modalId) {
+      // Hide any currently visible modal
+      document.querySelectorAll('.modal-card').forEach(card => card.classList.add('hidden'));
+
+      // Show container and targeted modal
+      modalContainer.classList.remove('hidden');
+      const target = document.getElementById(modalId);
+      if (target) {
+        target.classList.remove('hidden');
+        activeModalId = modalId;
+      }
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modalContainer.classList.add('hidden');
+      document.querySelectorAll('.modal-card').forEach(card => card.classList.add('hidden'));
+      activeModalId = null;
+      document.body.style.overflow = '';
+    }
+
+    // Close on backdrop click
+    modalContainer.addEventListener('click', (e) => {
+      if (e.target === modalContainer) {
+        closeModal();
+      }
+    });
+
+    // Close on Escape key press
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modalContainer.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  </script>
 
 </body>
 </html>
