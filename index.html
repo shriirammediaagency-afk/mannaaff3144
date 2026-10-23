@@ -1,106 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stock Education Hub – Start Learning</title>
-  <meta name="description" content="100% free stock market education. Learn chart reading, technical analysis, and risk management. No buy/sell tips. For learning purpose only.">
-  <link rel="canonical" href="https://example.com/">
-
-  <!-- Performance -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trade with Munaaf</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
-
-  <!-- Favicons (optional) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Stock Education Hub – Start Learning">
-  <meta property="og:description" content="Learn charts & risk management. No buy/sell tips. 100% educational.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop">
-
-  <!-- Minimal CSS (inline for speed) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    :root{
-      --bg1:#0c0c1d;
-      --bg2:#1a1a2b;
-      --brand: #00f0ff;
-      --brand-2:#00f0ff;
-      --text:#ffffff;
-      --muted:#b5b5c3;
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #e5e7eb;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        linear-gradient(135deg, rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url('https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover fixed;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      min-height:100vh;
+
+    /* Custom green matching the exact Telegram button shade */
+    .btn-telegram {
+      background-color: #3ca94d;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .container{
-      max-width:520px; margin:0 auto; padding:24px 18px; text-align:center; min-height:100vh; display:flex; flex-direction:column; justify-content:center;
-      backdrop-filter: saturate(130%);
+    .btn-telegram:hover {
+      background-color: #339443;
+      transform: translateY(-1px);
     }
-    .badge{display:inline-block; font-size:.78rem; padding:6px 10px; border:1px solid #2a2a3a; border-radius:999px; color:#d6eaff; background:rgba(0,240,255,.08); margin-bottom:14px}
-    h1{font-size:1.9rem; line-height:1.2; margin:6px 0 10px; background:linear-gradient(90deg,var(--brand-2),var(--brand)); -webkit-background-clip:text; background-clip:text; color:transparent;}
-    .sub{font-size:1rem; color:var(--muted); margin:0 auto 16px; max-width:36ch}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(0,255,153,.07); border:1px dashed rgba(0,255,153,.35); color:#d8ffe9; font-size:.9rem; margin:6px 0 18px;
+    .btn-telegram:active {
+      transform: translateY(0);
+      background-color: #2b7d38;
     }
-    ul.bullets{list-style:none; padding:0; margin:0 0 18px}
-    ul.bullets li{margin:8px 0; color:#e9eef9}
-    .cta{
-      display:inline-block; text-decoration:none; background:var(--brand); color:#041b14; padding:14px 18px; font-weight:700; border-radius:12px; box-shadow:0 0 0 0 rgba(0,255,153,.6); transform:translateZ(0);
-      transition:transform .15s ease;
-      animation:pulse 1.6s infinite;
+
+    /* Soft card shadow resembling the image */
+    .card-shadow {
+      box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.1), 0 4px 12px -2px rgba(0, 0, 0, 0.06);
     }
-    .cta:active{transform:scale(.98)}
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(0,255,153,.55)}
-      70%{box-shadow:0 0 0 20px rgba(0,255,153,0)}
-      100%{box-shadow:0 0 0 0 rgba(0,255,153,0)}
-    }
-    .fineprint{font-size:.86rem; color:var(--muted); margin:18px auto 0; max-width:44ch}
-    .disclaimer{font-size:.78rem; color:#9aa4b2; margin:18px auto 0; max-width:50ch}
-    .safe{display:flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; color:#a1ffd6; font-size:.9rem}
-    .shield{width:18px; height:18px; display:inline-block; border-radius:4px; background:linear-gradient(135deg,#0df,#0f9)}
-    footer{opacity:.8; margin-top:22px; font-size:.78rem; color:#9aa4b2}
   </style>
 </head>
-<body>
-  <main class="container">
-    <span class="badge">100% Educational • Policy Safe</span>
-    <h1>Stock Education Hub – Start Learning</h1>
-    <p class="sub">No tips, just education for beginners</p>
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8">
 
-    <div class="pill">🚫 No Buy/Sell Tips • ✅ For Learning Purpose Only</div>
+  <!-- Main Card Container -->
+  <main class="w-full max-w-[430px] bg-white rounded-[22px] card-shadow px-6 sm:px-8 py-9 flex flex-col items-center text-center">
 
-    <ul class="bullets" aria-label="What you'll learn">
-      <li>• Chart basics & risk rules (no return promises)</li>
-      <li>• How to read trends without speculation</li>
-      <li>• Market discipline & common mistakes</li>
-    </ul>
+    <!-- Circular Profile / Logo Image -->
+    <div class="relative w-24 h-24 mb-5 rounded-full overflow-hidden shadow-inner ring-2 ring-gray-100 flex-shrink-0 bg-gray-50 flex items-center justify-center">
+      <img 
+        src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=400&h=400&q=80" 
+        alt="Trade with Munaaf Logo" 
+        class="w-full h-full object-cover object-center"
+        onerror="this.onerror=null; this.src='https://placehold.co/200x200/10b981/ffffff?text=TWM';"
+      />
+    </div>
 
-    <!-- CTA goes to a page-specific bridge -->
-    <a class="cta" href="bridge-lp4.html" rel="nofollow">Start Learning</a>
+    <!-- Title -->
+    <h1 class="text-[26px] sm:text-[28px] font-extrabold text-black tracking-tight leading-tight mb-2.5">
+      Trade with Munaaf
+    </h1>
 
-    <div class="safe"><span class="shield" aria-hidden="true"></span> Ad Policy Friendly Content</div>
+    <!-- Subtitle -->
+    <p class="text-[#555a64] text-[15px] sm:text-[16px] leading-[1.4] max-w-[310px] mb-6 font-normal">
+      Get expert insights and strategies for stock market success
+    </p>
 
-    <p class="fineprint">We focus on concepts & frameworks suitable for beginners.</p>
-    <p class="disclaimer"><em>This website is for educational purposes only. We do not provide investment, trading, or financial advice.</em></p>
+    <!-- Top CTA Button -->
+    <a 
+      href="https://t.me/+mlmCXMi5hpI5OTc1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-telegram w-full max-w-[245px] text-white text-[15px] font-medium py-2.5 px-5 rounded-xl shadow-sm block text-center select-none"
+    >
+      Join our Telegram Channel
+    </a>
 
-    <footer>© <span id="y"></span> Market Basics Learning Hub</footer>
+    <!-- Section Heading -->
+    <h2 class="text-black font-extrabold text-[19px] sm:text-[20px] tracking-tight mt-6 mb-4">
+      What you'll get:
+    </h2>
+
+    <!-- Features / Value List -->
+    <div class="w-full flex flex-col gap-3 mb-6">
+      <!-- Item 1 -->
+      <div class="w-full bg-[#f8f9fa] border border-[#e5e7eb] rounded-xl py-3 px-4 text-[14.5px] sm:text-[15.5px] font-medium text-black flex items-center justify-center gap-2 hover:bg-[#f1f3f5] transition-colors">
+        <span class="text-base select-none">🔥</span>
+        <span>Daily market analysis and trends</span>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="w-full bg-[#f8f9fa] border border-[#e5e7eb] rounded-xl py-3 px-4 text-[14.5px] sm:text-[15.5px] font-medium text-black flex items-center justify-center gap-2 hover:bg-[#f1f3f5] transition-colors">
+        <span class="text-base select-none">📈</span>
+        <span>Expert stock picks and recommendations</span>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="w-full bg-[#f8f9fa] border border-[#e5e7eb] rounded-xl py-3 px-4 text-[14.5px] sm:text-[15.5px] font-medium text-black flex items-center justify-center gap-2 hover:bg-[#f1f3f5] transition-colors">
+        <span class="text-base select-none">💡</span>
+        <span>Proven trading strategies and tips</span>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="w-full bg-[#f8f9fa] border border-[#e5e7eb] rounded-xl py-3 px-4 text-[14.5px] sm:text-[15.5px] font-medium text-black flex items-center justify-center gap-2 hover:bg-[#f1f3f5] transition-colors">
+        <span class="text-base select-none">📊</span>
+        <span>Real-time market updates and alerts</span>
+      </div>
+    </div>
+
+    <!-- Bottom CTA Button -->
+    <a 
+      href="https://t.me/+mlmCXMi5hpI5OTc1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-telegram w-full max-w-[245px] text-white text-[15px] font-medium py-2.5 px-5 rounded-xl shadow-sm block text-center select-none"
+    >
+      Join our Telegram Channel
+    </a>
+
   </main>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
